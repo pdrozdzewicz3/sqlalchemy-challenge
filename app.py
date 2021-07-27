@@ -25,7 +25,7 @@ app = Flask(__name__)
 @app.route("/")
 def home():
         return """<html>
-<h5>Hawaii Climate API</h5>
+<h2>Hawaii Climate API</h2>
 
 <p>Precipitation Analysis:</p>
 <ul>
@@ -38,6 +38,14 @@ def home():
 <p>Temperature Analysis:</p>
 <ul>
   <li><a href="/api/v1.0/tobs">/api/v1.0/tobs</a></li>
+</ul>
+<p>Start Date Analysis:</p>
+<ul>
+  <li><a href="/api/v1.0/<start>">/api/v1.0/start</a></li>
+</ul>
+<p>End Date Analysis:</p>
+<ul>
+  <li><a href="/api/v1.0/start>/<end>">/api/v1.0/end</a></li>
 </ul>
 </html>
 """
@@ -70,11 +78,9 @@ def tobs():
         tobs_list = dict(tobs_data)
         return jsonify(tobs_list)
 
-# STart Date Route
-
+# Start Date Route
 
 # End Date Route
-
 
 # main
 if __name__ == '__main__':
